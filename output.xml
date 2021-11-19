@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.4 on win32)" generated="20211119 16:38:31.628" rpa="false">
+<suite id="s1" name="Verify Invalid Credential Suite" source="D:\B-Mine\Company\Company\Ericsson2\robot_workspace\AutomationFramework\LoginSuite\verify_invalid_credential_suite.robot">
+<test id="s1-t1" name="TC1">
+<kw name="Launch Browser" library="CommonFunctionality" type="setup">
+<kw name="Append To Environment Variable" library="OperatingSystem">
+<doc>Appends given ``values`` to environment variable ``name``.</doc>
+<arguments>
+<arg>Path</arg>
+<arg>${EXECDIR}${/}driver</arg>
+</arguments>
+<msg timestamp="20211119 16:38:31.949" level="INFO">Environment variable 'Path' set to value 'C:\Program Files\Common Files\Oracle\Java\javapath1;C:\Program Files\Python39\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\JiDi\AppData\Local\Android\Sdk\platform-tools;C:\Users\JiDi\AppData\Local\Android\Sdk\emulator;C:\Program Files\nodejs\;C:\Components\Maven\apache-maven-3.6.3\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Components\CSharp\NUnit.Console-3.12.0\bin\netcoreapp3.1;C:\Program Files\Java\jdk1.8.0_281\bin;C:\Program Files (x86)\dotnet\;C:\ProgramData\chocolatey\bin;C:\Program Files\Python39\Scripts;C:\Users\JiDi\AppData\Roaming\npm;C:\Users\JiDi\AppData\Local\Microsoft\WindowsApps1;C:\Users\JiDi\.dotnet\tools;C:\Users\JiDi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Oracle\VirtualBox;D:\B-Mine\Company\Company\Ericsson2\robot_workspace\AutomationFramework\driver'.</msg>
+<status status="PASS" starttime="20211119 16:38:31.948" endtime="20211119 16:38:31.949"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>browser=${BROWSER}</arg>
+</arguments>
+<msg timestamp="20211119 16:38:31.949" level="INFO">Opening browser 'headlesschrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20211119 16:38:31.949" endtime="20211119 16:38:34.312"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211119 16:38:34.312" endtime="20211119 16:38:34.432"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20211119 16:38:34.433" endtime="20211119 16:38:34.437"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>${EXECDIR}${/}Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20211119 16:38:34.437" endtime="20211119 16:38:34.439"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>url=${URL}</arg>
+</arguments>
+<msg timestamp="20211119 16:38:34.440" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" starttime="20211119 16:38:34.439" endtime="20211119 16:38:41.178"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:31.948" endtime="20211119 16:38:41.179"></status>
+</kw>
+<kw name="Verify Invalid Credential Template">
+<arguments>
+<arg>john</arg>
+<arg>john123</arg>
+<arg>Invalid credentials</arg>
+</arguments>
+<kw name="Enter Username" library="LoginPage">
+<doc>Types the given text into the username text field.
+Examples
+| Enter Username | Admin |
+| Enter Username | John |</doc>
+<arguments>
+<arg>${username}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${USERNAME LOCATOR}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20211119 16:38:41.182" level="INFO">Typing text 'john' into text field 'id=txtUsername'.</msg>
+<status status="PASS" starttime="20211119 16:38:41.181" endtime="20211119 16:38:41.290"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:41.181" endtime="20211119 16:38:41.290"></status>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<doc>Types the given text into the password text field.
+Examples
+| Enter Password | Admin |
+| Enter Password | John |</doc>
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PASSWORD LOCATOR}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20211119 16:38:41.292" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
+<msg timestamp="20211119 16:38:41.350" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20211119 16:38:41.406" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20211119 16:38:41.292" endtime="20211119 16:38:41.406"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:41.291" endtime="20211119 16:38:41.406"></status>
+</kw>
+<kw name="Click Login" library="LoginPage">
+<doc>Click on login.
+Examples
+| Click Login |</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN LOCATOR}</arg>
+</arguments>
+<msg timestamp="20211119 16:38:41.407" level="INFO">Clicking element 'id=btnLogin'.</msg>
+<status status="PASS" starttime="20211119 16:38:41.407" endtime="20211119 16:38:42.328"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:41.406" endtime="20211119 16:38:42.328"></status>
+</kw>
+<kw name="Validate Login Error Message" library="LoginPage">
+<doc>Validates the error message.
+Examples
+| Validate Login Error Message | Invalid credentials |
+| Validate Login Error Message | Username cannot be empty |
+| Validate Login Error Message | Password cannot be empty |</doc>
+<arguments>
+<arg>${expectedvalue}</arg>
+</arguments>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${ERROR LOCATOR}</arg>
+<arg>${expectederrormessage}</arg>
+</arguments>
+<msg timestamp="20211119 16:38:42.329" level="INFO">Verifying element 'id=spanMessage' contains exact text 'Invalid credentials'.</msg>
+<status status="PASS" starttime="20211119 16:38:42.329" endtime="20211119 16:38:42.353"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:42.328" endtime="20211119 16:38:42.353"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:41.179" endtime="20211119 16:38:42.353"></status>
+</kw>
+<kw name="End Browser" library="CommonFunctionality" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211119 16:38:42.355" endtime="20211119 16:38:44.851"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:42.354" endtime="20211119 16:38:44.852"></status>
+</kw>
+<status status="PASS" starttime="20211119 16:38:31.947" endtime="20211119 16:38:44.854" critical="yes"></status>
+</test>
+<doc>This file handles test related to invalid credential
+and story with OR-101</doc>
+<status status="PASS" starttime="20211119 16:38:31.631" endtime="20211119 16:38:44.857"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Verify Invalid Credential Suite">Verify Invalid Credential Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
