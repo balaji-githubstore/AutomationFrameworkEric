@@ -12,7 +12,7 @@ Test Template    Verify Invalid Credential Template
 
 *** Test Cases ***
 TC1    john    john123    Invalid credentials 
-# TC2    king    king123    Invalid credentials 
+TC2    king    king123    Invalid credentials 
 # TC3    rock    rock123    Invalid credentials 
 # TC4    ${EMPTY}    check123    Username cannot be empty
 # TC5    check123    ${EMPTY}    Password cannot be empty
